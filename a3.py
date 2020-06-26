@@ -9,6 +9,7 @@ from scipy.sparse import csr_matrix
 import urllib.request
 import zipfile
 
+
 def download_data():
     """Download and unzip data.
     """
@@ -141,6 +142,7 @@ def featurize(movies):
     
     return (movies, vocab)
 
+
 def train_test_split(ratings):
     """
     Returns a random split of the ratings matrix into a training and testing set.
@@ -237,6 +239,7 @@ def main():
     predictions = make_predictions(movies, ratings_train, ratings_test)
     print('error=%f' % mean_absolute_error(predictions, ratings_test))
     print(predictions[:10])
+
 
 if __name__ == '__main__':
     main()
